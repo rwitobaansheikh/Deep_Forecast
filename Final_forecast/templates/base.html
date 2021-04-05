@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/weather.css') }}">
+        {% block head%}{% endblock %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/1a64bde06e.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/graph_script.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/top.js') }}"></script>
+
+    </head>
+    <body>
+        <div class="header">
+            <h1><a href="/" class="active">DEEP FORECAST</a></h1>
+            <nav class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn"> 
+                    <i class="fas fa-bars" aria-label="Menu"></i>
+                </button>
+                {% block links %}{% endblock %}
+            </div>
+            </nav>
+        </div>
+        <a href="#" class="totop">
+            <span class="material-icons">arrow_upward</span>
+          </a>
+
+          <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
+            
+        
+        <div class="main">
+            
+            {% block body%}{% endblock %}
+            
+        </div>
+        
+        <footer class="footer">
+            Conceptualized by<br>Rwitobaan Sheikh, Husain Unwala & Sairaj Shetye. All rights reserved © 2021.
+            </footer>
+    </body>
+</html>

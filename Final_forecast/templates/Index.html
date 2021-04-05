@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home page</title>
+{% endblock %}
+
+{% block links %}
+<div class="links">
+    <a href="/" class="active">HOME</a>
+    <a href="/CapeCanaveral">CAPE CANAVERAL</a>
+    <a href="/Baikonur">BAIKONUR COSMODROME</a>
+    <a href="/Sriharikota">SRIHARIKOTA</a>
+    <a href="/Tanegashima">TANEGASHIMA SPACE CENTER</a>
+</div>
+
+{% endblock %}
+{% block body %}
+<div class="content">
+    <p>Weather forecasting has become an important field of research for scientists in the last few decades. 
+        It is used by many organizations and people to make daily decisions. 
+        This web application showcases a weather forecasting DeepNet model built using Tensorflow and Keras. 
+        The model is trained using 2 years worth of data. 
+        We have used Adam optimizer & Mean Squared Error (MSE) for calculating the loss. 
+        The model will hopefully give detailed prediction of temperature, dew point, humidity percentage, wind speed, 
+        pressure and precipitation. The use of deep learning algorithms to train a model for a given coordinate 
+        using relevant historical weather data of that region as the training set is used as the primary approach for 
+        this problem. This model can be suitably adapted for making forecasts over many other Spaceports if the correct 
+        resources are given. </p>
+
+        <div class="button" align="center"><a class="button_a" href="http://www.ijrar.org/papers/IJRARJFM1402.pdf" 
+            target="_blank">Learn More</a></div>
+</div>
+{% endblock %}

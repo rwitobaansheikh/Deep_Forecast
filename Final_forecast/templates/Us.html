@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Cape Canaveral</title>
+{% endblock %}
+
+{% block links %}
+<div class="links">
+    <a href="/">HOME</a>
+    <a href="/CapeCanaveral" class="active">CAPE CANAVERAL</a>
+    <a href="/Baikonur">BAIKONUR COSMODROME</a>
+    <a href="/Sriharikota">SRIHARIKOTA</a>
+    <a href="/Tanegashima">TANEGASHIMA SPACE CENTER</a>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="portname">
+    <h1>Cape Canaveral Air Force Staion</h1>
+</div>
+<div class=table>
+    {{result | safe}}
+</div>
+<div class="center">
+  <div class="graph">
+      <p>Temperature Forecast</p>
+      <div class="swap">
+        <button class="button_b" onclick="barGraph('chart1','bar1')"><i class="fas fa-chart-bar" alt="Bar Graph"></i></i></button>
+        <button class="button_b" onclick="lineGraph('chart1','bar1')"><i class="fas fa-chart-line" alt="Bar Graph"></i></button>
+      </div>
+      <canvas style="display: none;" id="chart1"></canvas>
+      <canvas id="bar1"></canvas>
+  </div>
+</div>
+<div class="center">
+  <div class="graph">
+      <p>Dew Point Forecast</p>
+      <div class="swap">
+        <button class="button_b" onclick="barGraph('chart2','bar2')"><i class="fas fa-chart-bar" alt="Bar Graph"></i></i></button>
+        <button class="button_b" onclick="lineGraph('chart2','bar2')"><i class="fas fa-chart-line" alt="Bar Graph"></i></button>
+      </div>
+      <canvas style="display: none;" id="chart2"></canvas>
+      <canvas id="bar2"></canvas>
+  </div>
+</div>
+<div class="center">
+  <div class="graph">
+      <p>Humidity Forecast</p>
+      <div class="swap">
+        <button class="button_b" onclick="barGraph('chart3','bar3')"><i class="fas fa-chart-bar" alt="Bar Graph"></i></i></button>
+        <button class="button_b" onclick="lineGraph('chart3','bar3')"><i class="fas fa-chart-line" alt="Bar Graph"></i></button>
+      </div>
+      <canvas style="display: none;" id="chart3"></canvas>
+      <canvas id="bar3"></canvas>
+  </div>
+</div>
+<div class="center">
+  <div class="graph">
+      <p>Windspeed Forecast</p>
+      <div class="swap">
+        <button class="button_b" onclick="barGraph('chart4','bar4')"><i class="fas fa-chart-bar" alt="Bar Graph"></i></i></button>
+        <button class="button_b" onclick="lineGraph('chart4','bar4')"><i class="fas fa-chart-line" alt="Bar Graph"></i></button>
+      </div>
+      <canvas style="display: none;" id="chart4"></canvas>
+      <canvas id="bar4"></canvas>
+  </div>
+</div>
+<div class="center">
+  <div class="graph">
+      <p>Pressure Forecast</p>
+      <div class="swap">
+        <button class="button_b" onclick="barGraph('chart5','bar5')"><i class="fas fa-chart-bar" alt="Bar Graph"></i></i></button>
+        <button class="button_b" onclick="lineGraph('chart5','bar5')"><i class="fas fa-chart-line" alt="Bar Graph"></i></button>
+      </div>
+      <canvas style="display: none;" id="chart5"></canvas>
+      <canvas id="bar5"></canvas>
+  </div>
+</div>
+<div class="center">
+  <div class="graph">
+      <p>Precipitation Forecast</p>
+      <div class="swap">
+        <button class="button_b" onclick="barGraph('chart6','bar6')"><i class="fas fa-chart-bar" alt="Bar Graph"></i></i></button>
+        <button class="button_b" onclick="lineGraph('chart6','bar6')"><i class="fas fa-chart-line" alt="Bar Graph"></i></button>
+      </div>
+      <canvas style="display: none;" id="chart6"></canvas>
+      <canvas id="bar6"></canvas>
+  </div>
+</div>          
+
+<script>
+   graph({{values | safe}},{{labels | safe}});
+</script>
+{% endblock %}
